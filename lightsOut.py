@@ -140,7 +140,6 @@ def simular_presionar(tablero, presionadas):
         if presionadas[i] == 1:
             fila = i // n
             columna = i % n
-            # Lista de posiciones a "togglear" (ella y vecinos inmediatos)
             posiciones = [(fila, columna)]
             if fila > 0:
                 posiciones.append((fila-1, columna))
@@ -150,7 +149,6 @@ def simular_presionar(tablero, presionadas):
                 posiciones.append((fila, columna-1))
             if columna < n-1:
                 posiciones.append((fila, columna+1))
-            # Cambiar el estado a todas las posiciones seleccionadas
             for f, c in posiciones:
                 resultado[f][c] ^= 1
     return resultado
