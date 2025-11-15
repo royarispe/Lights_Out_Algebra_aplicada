@@ -25,7 +25,7 @@ function Solver() {
 const resolver = async () => {
   setLoading(true);
   try {
-    const res = await fetch("http://localhost:8000/resolver", {
+    const res = await fetch("https://lights-out-algebra-aplicada.onrender.com/resolver", {
       method: "POST",
       headers: { "Content-Type": "application/json" },  
       body: JSON.stringify({ tablero }),
