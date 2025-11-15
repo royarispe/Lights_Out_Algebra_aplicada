@@ -1,5 +1,5 @@
 import unittest
-from api import lightsOut
+import lightsOut
 
 
 class TestLightsOut(unittest.TestCase):

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from api import lightsOut
+import lightsOut
 
 app = FastAPI()
 
