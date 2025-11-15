@@ -83,12 +83,12 @@ class TestLightsOut(unittest.TestCase):
 
     def test_sin_solucion(self):
         tablero = [
-            [1,1,1],
-            [1,1,1],
-            [1,1,2]
+            [1,0,1],
+            [0,1,0],
+            [1,0,1]
         ]
-        with self.assertRaises(ValueError):
-            _ = lightsOut.resolver_lights_out(tablero)
+        solucion = lightsOut.resolver_lights_out(tablero)
+        self.assertIsNone(solucion)
 
 if __name__ == '__main__':
     unittest.main()
