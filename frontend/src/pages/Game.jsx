@@ -10,7 +10,7 @@ function Game() {
   const generarNuevoTablero = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/nuevo", {
+      const res = await fetch("https://lights-out-algebra-aplicada.onrender.com/nuevo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ n }),
@@ -30,7 +30,7 @@ function Game() {
     if (victoria) return;
     
     try {
-      const res = await fetch("http://localhost:8000/presionar", {
+      const res = await fetch("https://lights-out-algebra-aplicada.onrender.com/presionar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tablero, fila, columna }),
@@ -40,7 +40,7 @@ function Game() {
       setMovimientos(prev => prev + 1);
       
       // Verificar victoria
-      const resVictoria = await fetch("http://localhost:8000/victoria", {
+      const resVictoria = await fetch("https://lights-out-algebra-aplicada.onrender.com/victoria", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tablero: data.tablero }),
@@ -57,7 +57,7 @@ function Game() {
   const reiniciarJuego = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/reiniciar", {
+      const res = await fetch("https://lights-out-algebra-aplicada.onrender.com/reiniciar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ n }),
